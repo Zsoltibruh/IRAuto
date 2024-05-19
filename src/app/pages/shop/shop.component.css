@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#selection {
+    background-color: rgb(255, 215, 64);
+    padding: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    align-self: flex-start;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.no--stock {
+    color: red;
+}
+
+.discount-item {
+    font-size: 1.15rem;
+    min-width: 150px;
+    border-radius: 15px;
+}
+
+.discount-actions {
+    background-color: rgb(255, 215, 64);
+    border-radius: 0 0 15px 15px;
+}
+
+mat-card-content {
+    padding-block: 5px;
+}

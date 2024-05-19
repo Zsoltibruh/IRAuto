@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ir-auto": {
+      "hosting": {
+        "project": [
+          "ir-auto"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ir-auto"
+  }
+}

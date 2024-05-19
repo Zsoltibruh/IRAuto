@@ -1,0 +1,40 @@
+<main>
+    <div>
+        <mat-form-field color="warn">
+            <mat-label>Felhasználónév</mat-label>
+            <input matInput [formControl]="username" placeholder="Felhasználónév">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>E-mail cím</mat-label>
+            <input matInput placeholder="pelda@email.hu" [formControl]="email" (blur)="updateErrorMessage()" required>
+            <mat-icon matSuffix>mail</mat-icon>
+            @if (email.invalid) {
+            <mat-error>{{emailErrorMessage}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>E-mail cím újra</mat-label>
+            <input matInput [formControl]="email2" placeholder="pelda@email.hu">
+            <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Jelszó</mat-label>
+            <input matInput [formControl]="password" [type]="hidepw ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hidepw = !hidepw" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hidepw">
+                <mat-icon>{{hidepw ? 'lock' : 'lock_open'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Jelszó újra</mat-label>
+            <input matInput [formControl]="password2" [type]="hidepw ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hidepw = !hidepw" [attr.aria-label]="'Hide password2'"
+                [attr.aria-pressed]="hidepw">
+                <mat-icon>{{hidepw ? 'lock' : 'lock_open'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button (click)="signup()" color="warn">Regisztráció</button>
+        <mat-error *ngIf="errorMsg">{{emailErrorMessage}}</mat-error>
+    </div>
+</main>

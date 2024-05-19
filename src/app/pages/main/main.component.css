@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    background-color: rgb(244, 67, 54);
+    padding: 15px;
+    color: white;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    width: 70%;
+}
+
+p {
+    padding: 5px;
+    line-height: 50px;
+}
+
+.right-text {
+    float: right;
+}
+
+.logo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.logo {
+    transform: scale(15);
+}
+
+.discount {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.discount img {
+    width: 30%;
+    aspect-ratio: 1/1;
+}
+
+.discount h1 {
+    width: max-content;
+}
+
+.discount-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.discount-item {
+    width: 20%;
+    border-radius: 15px;
+}
+
+.discount-actions button {
+    padding: 5px;
+}

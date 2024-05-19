@@ -1,0 +1,40 @@
+<main>
+    <div>
+        <mat-form-field color="warn">
+            <mat-label>{{username}}</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>{{email}}</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <button mat-raised-button (click)="changeData()" color="warn">Adatok módosítása</button>
+        <hr> <br>
+        <mat-form-field color="warn">
+            <mat-label>Régi jelszó</mat-label>
+            <input matInput [formControl]="password" [type]="hide2 ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide2">
+                <mat-icon>{{hide2 ? 'lock' : 'lock_open'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Új jelszó</mat-label>
+            <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'lock' : 'lock_open'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Új jelszó újra</mat-label>
+            <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'lock' : 'lock_open'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button (click)="changePassword()" color="warn">Jelszó módosítása</button> <br>
+        <button mat-button (click)="deleteProfile()" color="warn">Profil törlése</button>
+    </div>
+</main>

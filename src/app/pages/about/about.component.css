@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    background-color: rgb(244, 67, 54);
+    padding: 15px;
+    color: white;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    transform: scale(15);
+}
+
+.spacer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+article {
+    width: 70%;
+}
+
+p {
+    padding: 5px;
+    line-height: 50px;
+}
+
+.right-text {
+    float: right;
+}

@@ -1,0 +1,31 @@
+<main>
+    <div>
+        <mat-form-field color="warn">
+            <mat-label>E-mail cím</mat-label>
+            <input matInput [formControl]="email" placeholder="pelda@email.hu">
+            <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Jelszó</mat-label>
+            <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'lock' : 'lock_open'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button (click)="login()" color="warn">Bejelentkezés</button>
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+        <!--         <mat-form-field>
+            <mat-label>E-mail cím</mat-label>
+            <input matInput placeholder="pelda@email.hu" [formControl]="email" (blur)="updateErrorMessage()" required>
+            @if (email.invalid) {
+            <mat-error>{{errorMessage}}</mat-error>
+            }
+        </mat-form-field> -->
+        <!--         <mat-form-field appearance="outline" color="warn">
+            <mat-label>E-mail cím</mat-label>
+            <input matInput placeholder="pelda@email.hu">
+            <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field> -->
+    </div>
+</main>

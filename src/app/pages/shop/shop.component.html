@@ -1,0 +1,46 @@
+<main>
+    <div id="selection">
+        <mat-form-field color="warn">
+            <mat-label>Válassz márkát</mat-label>
+            <mat-select [(value)]="selectedBrand" (selectionChange)="onBrandChange($event.value)">
+                @for (brand of brands; track brand) {
+                <mat-option [value]="brand">{{brand}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Válassz típust</mat-label>
+            <mat-select [(value)]="selectedType" (selectionChange)="onTypeChange($event.value)">
+                @for (type of types; track type) {
+                <mat-option [value]="type">{{type}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button (click)="loadParts()" color="warn">Send</button>
+    </div>
+    <div>
+        @for (detail of parts; track detail) {
+        <mat-card class="discount-item">
+            <mat-card-header class="discount-header">
+                <mat-card-subtitle>{{detail.brand}} {{detail.brand_type}}</mat-card-subtitle>
+                <mat-card-title>{{detail.name}}</mat-card-title>
+            </mat-card-header>
+            <hr>
+            <mat-card-content>
+                <p>{{detail.price | currency:'HUF':'':'1.2-2'}} Ft</p>
+                @if (detail.quantity < 1) { <p class="no--stock">Elfogyott!</p>
+                    }
+                    @else {
+                    <p>{{detail.quantity}} db</p>
+                    }
+            </mat-card-content>
+            <mat-card-actions class="discount-actions">
+                @if (detail.quantity < 1) { <button mat-raised-button disabled color="warn">Kosárba</button>
+                    } @else {
+                    <button mat-raised-button color="warn">Kosárba</button>
+                    }
+            </mat-card-actions>
+        </mat-card>
+        }
+    </div>
+</main>

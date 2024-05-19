@@ -1,0 +1,21 @@
+<mat-toolbar color="accent">
+    <div class="logo-div">
+        <span>IR-Autó</span>
+        <mat-icon class="logo" color="warn">tire_repair</mat-icon>
+    </div>
+    <div class="navigation">
+        <span><a mat-button routerLink="main">Főoldal</a></span>
+        <span><a mat-button routerLink="about">Rólunk</a></span>
+        <span><a mat-button routerLink="shop">Webshop</a></span>
+    </div>
+    <span class="spacer"></span>
+    <div>
+        <span *ngIf="!(user)"><a mat-button routerLink="login">Bejelentkezés</a></span>
+        <span *ngIf="(user)"><a mat-button [matMenuTriggerFor]="menu">{{username}}</a></span>
+        <mat-menu #menu="matMenu">
+            <span><a mat-menu-item routerLink="profile">Profil</a></span>
+            <span><a mat-menu-item routerLink="main" (click)="logout()">Kijelentkezés</a></span>
+        </mat-menu>
+        <span *ngIf="!(user)"><a mat-button routerLink="signup">Regisztráció</a></span>
+    </div>
+</mat-toolbar>
